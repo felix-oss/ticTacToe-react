@@ -10,6 +10,12 @@ import "../styles/index.scss";
 
 //import your own components
 import { Home } from "./component/home.js";
+import { PickWeapon } from "./component/pickW.js";
+import { PlayBoard } from "./component/board.js";
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+ReactDOM.render(
+	<PickWeapon />,
+
+	document.querySelector("#app")
+);
