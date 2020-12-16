@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./tile.css";
 
 export default class Tile extends Component {
 	titleClick(props) {

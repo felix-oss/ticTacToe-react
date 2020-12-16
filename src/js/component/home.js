@@ -9,7 +9,8 @@ class Home extends Component {
 	constructor() {
 		super();
 		this.state = {
-			gameBoard: [" ", " ", "", " ", " ", "", " ", " ", ""]
+			gameBoard: [" ", " ", "", " ", " ", "", " ", " ", ""],
+			turn: "x"
 		};
 	}
 
@@ -22,15 +23,19 @@ class Home extends Component {
 					<Announcement />
 					<ResetButton />
 				</div>
-				{this.state.gameBoard.map(function(value, i) {
-					<Tile
-						key={i}
-						loc={i}
-						value={value}
-						updateBoard={this.updateBoard.bind(this)}
-						turn={this.state.turn}
-					/>;
-				})}
+				{this.state.gameBoard.map(
+					function(value, i) {
+						return (
+							<Tile
+								key={i}
+								loc={i}
+								value={value}
+								updateBoard={this.updateBoard.bind(this)}
+								turn={this.state.turn}
+							/>
+						);
+					}.bind(this)
+				)}
 			</div>
 		);
 	}
