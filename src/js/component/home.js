@@ -5,22 +5,24 @@ import Announcement from "./announcement.js";
 import ResetButton from "./resetButton.js";
 import Tile from "./tile.js";
 
-class Home extends Component {
+export default class Home extends Component {
 	constructor() {
 		super();
 		this.state = {
 			gameBoard: [" ", " ", "", " ", " ", "", " ", " ", ""],
-			turn: "x"
+			turn: "x",
+			winner: null
 		};
 	}
 
 	updateBoard(loc, player) {}
+
 	render() {
 		return (
 			<div className="container">
 				<div className="menu">
 					<h1>Tic Tac Toe</h1>
-					<Announcement />
+					<Announcement winner={this.state.winner} />
 					<ResetButton />
 				</div>
 				{this.state.gameBoard.map(
@@ -40,5 +42,3 @@ class Home extends Component {
 		);
 	}
 }
-
-export default Home;
